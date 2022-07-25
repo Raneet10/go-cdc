@@ -6,6 +6,7 @@ import "fmt"
 // a function that returns an int.
 func fibonacci() func() int {
 	a, b := 0, 1
+
 	return func() int {
 		c := a + b
 		a, b, c = b, c, a

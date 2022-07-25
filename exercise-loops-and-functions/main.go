@@ -14,6 +14,7 @@ func Sqrt(x float64) float64 {
 		if math.Abs(z-prev) < 1e-18 {
 			break
 		}
+
 		prev = z
 	}
 
