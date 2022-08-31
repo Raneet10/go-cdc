@@ -21,7 +21,9 @@ func addNumAtEnd(n int, arr []int) ([]int, error) {
 	if arr == nil {
 		return nil, errors.New("Nil Slice")
 	}
+
 	arr = append(arr, n)
+
 	return arr, nil
 }
 
@@ -29,7 +31,9 @@ func addNumAtBegg(n int, arr []int) ([]int, error) {
 	if arr == nil {
 		return nil, errors.New("Nil Slice")
 	}
+
 	arr = append([]int{n}, arr...)
+
 	return arr, nil
 }
 
@@ -45,21 +49,24 @@ func removeFromPos(arr []int, i int) (int, []int, error) {
 	if len(arr) == 1 {
 		x := arr[0]
 		arr = []int{}
+
 		return x, arr, nil
 	}
+
 	x := arr[i]
 	arr = append(arr[0:i], arr[i+1:]...)
 
 	fmt.Println("Arr after removing ith elem: ", arr)
+
 	return x, arr, nil
 }
 
 // Assuming the elements in a slice are distinct
 func mergeWithoutDuplicate(a, b []int) ([]int, error) {
-
 	if a == nil || b == nil {
 		return nil, errors.New("Nil Slice")
 	}
+
 	dup := make(map[int]struct{})
 
 	for _, v := range a {
@@ -89,6 +96,7 @@ func removeElemFromSecond(a, b []int) ([]int, error) {
 	if a == nil || b == nil {
 		return nil, errors.New("Nil Slice")
 	}
+
 	dup := make(map[int]struct{})
 
 	for _, v := range b {
@@ -137,11 +145,10 @@ func copySlice(a []int) ([]int, error) {
 	if a == nil {
 		return nil, errors.New("Nil Slice")
 	}
+
 	b := make([]int, 0, len(a))
 
-	for _, v := range a {
-		b = append(b, v)
-	}
+	b = append(b, a...)
 
 	return b, nil
 }
@@ -155,9 +162,10 @@ func swapEvenOdd(a []int) ([]int, error) {
 		if i == len(a)-1 {
 			break
 		}
-		a[i], a[i+1] = a[i+1], a[i]
 
+		a[i], a[i+1] = a[i+1], a[i]
 	}
+
 	return a, nil
 }
 

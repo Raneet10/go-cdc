@@ -9,6 +9,7 @@ import (
 
 func wordOccurence(text string) map[string]int {
 	count := make(map[string]int)
+
 	var word []rune
 
 	for _, v := range text {
@@ -20,7 +21,7 @@ func wordOccurence(text string) map[string]int {
 		}
 	}
 
-	fmt.Println("Occurence of each word in the text: ", text)
+	fmt.Println("Occurrence of each word in the text: ", text)
 
 	for k, v := range count {
 		fmt.Println("Word ", k, "occurs %d times", v)
@@ -33,6 +34,7 @@ func countIntegers(arr []int) (map[int]int, error) {
 	if arr == nil {
 		return nil, errors.New("Nil Slice")
 	}
+
 	count := make(map[int]int)
 
 	for _, v := range arr {
@@ -46,6 +48,7 @@ func findCommonElements(a, b []int) ([]int, error) {
 	if a == nil || b == nil {
 		return nil, errors.New("Nil slice(s)")
 	}
+
 	common := make(map[int]struct{})
 	c := make([]int, 0, len(common))
 

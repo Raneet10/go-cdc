@@ -7,6 +7,8 @@ import (
 )
 
 func TestWordOccurence(t *testing.T) {
+	t.Parallel()
+
 	text := "This is a test for maps from a dev in core dev course"
 
 	count := wordOccurence(text)
@@ -15,6 +17,8 @@ func TestWordOccurence(t *testing.T) {
 }
 
 func TestCountIntegers(t *testing.T) {
+	t.Parallel()
+
 	var a []int
 	count, err := countIntegers(a)
 	require.NotNil(t, err)
@@ -25,10 +29,11 @@ func TestCountIntegers(t *testing.T) {
 	count, err = countIntegers(a)
 	require.Nil(t, err)
 	require.Equal(t, res, count[4])
-
 }
 
 func TestFindCommonElements(t *testing.T) {
+	t.Parallel()
+
 	a := []int{1, 2, 5}
 	b := []int{5, 4, 1}
 	res := []int{1, 5}
@@ -39,6 +44,8 @@ func TestFindCommonElements(t *testing.T) {
 }
 
 func TestFibonacci(t *testing.T) {
+	t.Parallel()
+
 	n := 6
 	x := fibonacci(n)
 	res := 8
@@ -48,5 +55,7 @@ func TestFibonacci(t *testing.T) {
 
 // TODO: Maybe return the sorted slice of keys and check ?
 func TestSort2DMap(t *testing.T) {
+	t.Parallel()
 
+	sort2DMap(nil)
 }

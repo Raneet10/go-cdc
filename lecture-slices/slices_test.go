@@ -7,8 +7,11 @@ import (
 )
 
 func TestAddNumToSlice(t *testing.T) {
+	t.Parallel()
+
 	// Nil Slice
 	var arr []int
+
 	n := 5
 
 	arr, err := addNumToSlice(n, arr)
@@ -25,8 +28,11 @@ func TestAddNumToSlice(t *testing.T) {
 }
 
 func TestAddNumAtEnd(t *testing.T) {
+	t.Parallel()
+
 	// Nil Slice
 	var arr []int
+
 	n := 5
 
 	arr, err := addNumAtEnd(n, arr)
@@ -43,8 +49,11 @@ func TestAddNumAtEnd(t *testing.T) {
 }
 
 func TestAddNumAtBegg(t *testing.T) {
+	t.Parallel()
+
 	// Nil Slice
 	var arr []int
+
 	n := 5
 
 	arr, err := addNumAtBegg(n, arr)
@@ -61,6 +70,8 @@ func TestAddNumAtBegg(t *testing.T) {
 }
 
 func TestRemoveFromPos(t *testing.T) {
+	t.Parallel()
+
 	// Empty array
 	arr := []int{}
 	i := 5
@@ -90,6 +101,8 @@ func TestRemoveFromPos(t *testing.T) {
 }
 
 func TestMergeWithoutDuplicate(t *testing.T) {
+	t.Parallel()
+
 	var a, b []int
 	c, err := mergeWithoutDuplicate(a, b)
 	require.Nil(t, c)
@@ -104,6 +117,8 @@ func TestMergeWithoutDuplicate(t *testing.T) {
 }
 
 func TestRemoveElemFromSecond(t *testing.T) {
+	t.Parallel()
+
 	var a, b []int
 	a, err := removeElemFromSecond(a, b)
 	require.Nil(t, a)
@@ -118,8 +133,11 @@ func TestRemoveElemFromSecond(t *testing.T) {
 }
 
 func TestShiftLeft(t *testing.T) {
+	t.Parallel()
+
 	// Nil Slice
 	var a []int
+
 	i := 2
 	a, err := shiftLeft(a, i)
 	require.NotNil(t, err)
@@ -142,17 +160,20 @@ func TestShiftLeft(t *testing.T) {
 }
 
 func TestShiftRight(t *testing.T) {
+	t.Parallel()
+
 	// Nil Slice
 	var a []int
+
 	i := 2
-	a, err := shiftLeft(a, i)
+	a, err := shiftRight(a, i)
 	require.NotNil(t, err)
 	require.Nil(t, a)
 
 	// Invalid index
 	a = []int{1, 2, 5, 6}
 	i = 4
-	a, err = shiftLeft(a, i)
+	a, err = shiftRight(a, i)
 	require.NotNil(t, err)
 	require.Nil(t, a)
 
@@ -166,6 +187,8 @@ func TestShiftRight(t *testing.T) {
 }
 
 func TestCopySlice(t *testing.T) {
+	t.Parallel()
+
 	var a []int
 	b, err := copySlice(a)
 	require.NotNil(t, err)
@@ -178,6 +201,8 @@ func TestCopySlice(t *testing.T) {
 }
 
 func TestSwapEvenOdd(t *testing.T) {
+	t.Parallel()
+
 	// Not enough elements
 	a := []int{1}
 	a, err := swapEvenOdd(a)
@@ -200,6 +225,8 @@ func TestSwapEvenOdd(t *testing.T) {
 }
 
 func TestSortInt(t *testing.T) {
+	t.Parallel()
+
 	a := []int{1, 7, 2, 9, 0}
 	desc := false
 	res := []int{0, 1, 2, 7, 9}
